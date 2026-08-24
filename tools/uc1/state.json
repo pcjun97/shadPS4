@@ -1,0 +1,30 @@
+{
+  "current_commit": "443676d8-dirty",
+  "wsl_distro": "Ubuntu 22.04.5 LTS",
+  "wsl_kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "compiler": "gcc-16 (Homebrew 16.1.0, glibc 2.39)",
+  "build_type": "RelWithDebInfo",
+  "build_flags": "-DSDL_UNIX_CONSOLE_BUILD=ON -DLIBUSB_ENABLE_UDEV=OFF",
+  "game_id": "CUSA03280",
+  "game_path": "games/CUSA03280 (from uncharted1.pkg via shadPS4Plus pkg_extractor)",
+  "game_size": "15G",
+  "highest_gate": "G6",
+  "last_stage": "G6_60S_ALIVE",
+  "last_signature": "timeout_60s_no_crash",
+  "last_result_dir": "tools/uc1/results/20260825_002555_null",
+  "accepted_commits": [],
+  "pending_hypotheses": [
+    "Validate G4 intro survives 90s timeout in null mode",
+    "If crash, check for sys_modules missing (libSce* HLE vs LLE) or font/trophy"
+  ],
+  "requires_native_linux": false,
+  "vulkan_icd": "tools/mesa/lvp_icd.json",
+  "null_gpu": true,
+  "reproducible": true,
+  "repro_commands": [
+    "./tools/uc1/run.sh null 60 CUSA03280",
+    "./tools/uc1/run.sh null 90 CUSA03280"
+  ],
+  "build": "gcc-16 RelWithDebInfo SDL_UNIX_CONSOLE_BUILD=ON LIBUSB_ENABLE_UDEV=OFF",
+  "stop_reason": "G6 achieved reproducibly in null/core path"
+}
